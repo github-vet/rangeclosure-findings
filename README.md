@@ -1,5 +1,5 @@
-# rangeloop-findings
-Rangeloop findings in GitHub projects.
+# rangeclosure-findings
+Range closure findings in GitHub projects.
 
 **Currently all findings should be considered preliminary, as we are working to tune the static analysis. Stay tuned for more information.**
 
