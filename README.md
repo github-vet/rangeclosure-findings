@@ -1,6 +1,8 @@
 # rangeloop-findings
 Rangeloop findings in GitHub projects.
 
+**Currently all findings should be considered preliminary, as we are working to tune the static analysis. Stay tuned for more information.**
+
 ## Where's the Code?!
 
 This repository is "issue-only". It exists to capture the findings of [a static analysis bot](https://github.com/github-vet/vet-bot), which reads Golang repositories found on GitHub and captures examples of the [range loop capture error](https://github.com/golang/go/wiki/CommonMistakes#using-reference-to-loop-iterator-variable).
