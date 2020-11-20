@@ -1,7 +1,7 @@
 # rangeclosure-findings
 Range closure findings in GitHub projects.
 
-**Currently all findings should be considered preliminary, as we are working to tune the static analysis. Stay tuned for more information.**
+### **Currently all findings should be considered preliminary, as we are working to tune the static analysis. Stay tuned for more information.**
 
 ## Where's the Code?!
 
