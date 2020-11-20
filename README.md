@@ -65,7 +65,7 @@ for _, n := range g.nodes {
 
 ### Mitigated
 
-These examples aren't bugs because they have been written in such a way that the capture is mitigated. "Mitigated" examples aren't as interesting as desirable behavior, but we want to mark them separately, so we can consider augmenting the analysis procedure to detect them separately.
+These examples aren't bugs because they have been written in such a way that the capture is mitigated. "Mitigated" examples aren't as interesting as desirable behavior, but we want to mark them separately, so we can consider augmenting the analysis procedure to detect them someday.
 
 ##### Examples
 For instance, the [below finding](https://github.com/github-vet/rangeloop-findings/issues/320) is 'mitigated' by explicitly passing the `index` variable into the function started via a goroutine.
