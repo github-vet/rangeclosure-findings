@@ -71,7 +71,7 @@ for _, n := range g.nodes {
 These examples aren't bugs because they have been written in such a way that the capture is mitigated. "Mitigated" examples aren't as interesting as desirable behavior, but we want to mark them separately, so we can consider augmenting the analysis procedure to detect them someday.
 
 ##### Examples
-For instance, the [below finding]https://github.com/wallix/triplestore/blob/4099dd913851642f2c0b71f9c1a0c6887748849c/decode.go#L263-L274) is 'mitigated' by explicitly passing the `reader` variable into the function started via a goroutine.
+For instance, the [below finding](https://github.com/wallix/triplestore/blob/4099dd913851642f2c0b71f9c1a0c6887748849c/decode.go#L263-L274) is 'mitigated' by explicitly passing the `reader` variable into the function started via a goroutine.
 ```go
 for _, reader := range dec.rs {
 	wg.Add(1)
