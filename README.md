@@ -33,9 +33,11 @@ The goal of the [github-vet](https://github.com/github-vet) project is to motiva
 We're glad you're here! We need the help of the Go community to examine our bot's findings to determine if they represent a bug or not.
 
 Each instance falls into one of three buckets (explained further below).
-1. **Bug** - as written, the captured loop variable could lead to undesirable behavior.
-1. **Mitigated** - the captured loop variable does not escape the block of the for loop, no undesirable behavior can occur.
-1. **Desirable Behavior** - the current capture semantics are required for the correct operation of the program. Changing the behavior of the compiler would break this code.
+1. **Bug** :-1: - as written, the captured loop variable could lead to undesirable behavior.
+1. **Mitigated** :+1: - the captured loop variable does not escape the block of the for loop, no undesirable behavior can occur.
+1. **Desirable Behavior** :rocket: - the current capture semantics are required for the correct operation of the program. Changing the behavior of the compiler would break this code.
+
+Findings can be classified by the community by adding emoji reactions to the issue. A separate bot will gather the community assessment and consider it in addition to the assessment of experts.
 
 ### Desirable Behavior
 
