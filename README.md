@@ -39,7 +39,7 @@ Each instance falls into one of three buckets (explained further below).
 
 ### Bugs
 
-An example is a bug when the captured loop variable causes "undesirable" or "confusing" behavior. These terms are somewhat subjective but it depends on the programmer's intent. While we can't _know_ the programmer's original intent, we _can_ ask whether the actual behavior could be better achieved in a different way.
+An example is a bug when the captured loop variable causes "undesirable" or "confusing" behavior. These terms are somewhat subjective but it depends on the programmer's intent. While we can't _know_ the programmer's original intent, we _can_ ask whether the code exhibits a race condition and whether the actual behavior could be better achieved in a different way.
 
 For example, [the below finding](https://github.com/yamamoto-febc/jobq/blob/e84914ddcb6230dc1ce6a825ef787c87563746b6/jobqueue.go#L120-L127) is an example of undesirable behavior. A reference to the loop variable `action` is captured in the goroutine started within the block of the for loop. There is a race-condition between updating the value of `action` at the beginning of the loop and reading the value of `action` within the goroutine. If `len(d.workers) > 1`, the only action to be run will be the last entry visited in the range loop. We mark this as a bug because if that was the intent, it would have been written differently.
 ```go
@@ -53,7 +53,7 @@ for queueName, action := range d.workers {
 }
 ```
 
-As another example, in [the below finding](https://github.com/zikichombo/plug/blob/06941afb0420c1fbd344a7665b1a6cf2706a6981/graph.go#L37-L45), the undesirable behavior also occurs. Updates to the value of `n` race against the start of the goroutine, ensuring there is no guarantee that `.Run()` will be called on every value in `g.nodes`, which is clearly the intent of the range loop.
+As another example, in [the below finding](https://github.com/zikichombo/plug/blob/06941afb0420c1fbd344a7665b1a6cf2706a6981/graph.go#L37-L45), undesirable behavior also occurs. Updates to the value of `n` race against the start of the goroutine, ensuring there is no guarantee that `.Run()` will be called on every value in `g.nodes`, which is clearly the intent of the range loop.
 ```go
 for _, n := range g.nodes {
   wg.Add(1)
