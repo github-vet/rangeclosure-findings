@@ -37,6 +37,12 @@ Each instance falls into one of three buckets (explained further below).
 1. **Mitigated** - the captured loop variable does not escape the block of the for loop, no undesirable behavior can occur.
 1. **Desirable Behavior** - the current capture semantics are required for the correct operation of the program. Changing the behavior of the compiler would break this code.
 
+### Desirable Behavior
+
+We don't currently have any examples of desirable behavior which depends on the current semantics of range-loop captures. The goal of the project is to determine whether such an example exists.
+
+We don't think such an example exists. This means that any examples marked as 'Desirable' will be faced with skepticism and a high degree of scrutiny. This should not discourage reporting that they suspect desirable behavior. Let us know! We will chime in and give our view. Just be aware that we may disagree, so is important to engage with a sense of professional detachment. Be humble and keep learning.
+
 ### Bugs
 
 An example is a bug when the captured loop variable causes "undesirable" or "confusing" behavior. These terms are somewhat subjective but it depends on the programmer's intent. While we can't _know_ the programmer's original intent, we _can_ ask whether the code exhibits a race condition and whether the actual behavior could be better achieved in a different way.
@@ -110,9 +116,3 @@ for i, tt := range tests {
 	}
 }
 ```
-
-### Desirable Behavior
-
-We don't currently have any examples of desirable behavior which depends on the current semantics of range-loop captures. The goal of the project is to determine whether such an example exists.
-
-We don't think such an example exists. This means that any examples marked as 'Desirable' will be faced with skepticism and a high degree of scrutiny. This should not discourage reporting that they suspect desirable behavior. Let us know! We will chime in and give our view. Just be aware that we may disagree, so is important to engage with a sense of professional detachment. Be humble and keep learning.
