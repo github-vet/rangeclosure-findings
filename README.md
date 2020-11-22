@@ -1,6 +1,8 @@
 # rangeclosure-findings
 Range closure findings in GitHub projects.
 
+The findings in the issue tracker of this repository were gathered to understand the impact of [this proposed change](https://golang.org/issue/20733).
+
 ### **Currently all findings should be considered preliminary, as we are working to tune the static analysis. Stay tuned for more information.**
 
 ## Where's the Code?!
