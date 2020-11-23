@@ -15,7 +15,7 @@ Range-loop capture is the reason this code prints `4, 4, 4, 4,` instead of what 
 xs := []int{1, 2, 3, 4}
 for _, x := range xs {
     go func() {
-        fmt.Printf("%d, " x)
+        fmt.Printf("%d", x)
     }()
 }
 ```
