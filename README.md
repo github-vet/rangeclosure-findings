@@ -147,7 +147,7 @@ for _, i := range []int{1,2,3} {
 ```
 Reported as `reference to i is reassigned at line 3`.
 
-### Range Variable Used in Potentially Unsafe Function
+### Range Variable Passed as Argument to a Potentially Unsafe Function
 
 #### Type I: Function Writes Pointer to Memory
 ```
@@ -181,4 +181,4 @@ Reported as `function call which takes a reference to i at line 8 may start a go
 
 At the time of this writing, a Type II error would be reported whether `unsafe` uses the value of `x` inside the goroutine or not.
 
-Both of the errors reported above are traced inductively throughout the call graph. Roughly speaking, if a function `f` calls a function `g` which is marked as unsafe, then `f` is also considered unsafe.
+Both Type I and II errors reported above are traced inductively throughout the call graph. Roughly speaking, if a function `f` calls a function `g` which is marked as unsafe, then `f` is also considered unsafe.
