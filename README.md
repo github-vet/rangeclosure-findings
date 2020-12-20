@@ -132,8 +132,8 @@ VetBot does a lot of work to try and prove that no reference to a range-loop var
 ```
 for _, i := range []int{1,2,3} {
    go func() {
-     fmt.Print(i + ", ") // prints 3,3,3 (usually)
-   }
+     fmt.Print(i) // prints 3,3,3 (usually)
+   }()
 }
 ```
 Reported as `range-loop variable i used in defer or goroutine at line 3`.
@@ -169,7 +169,7 @@ A Type I error would also be reported in case `unsafe` uses the value of `x` ins
 func unsafe(x *int) {
   go func() {
     fmt.Println(x)
-  }
+  }()
 }
 
 for _, i := range []int{1,2,3} {
