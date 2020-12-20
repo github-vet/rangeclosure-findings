@@ -162,7 +162,7 @@ for _, i := range []int{1,2,3} {
 ```
 Reported as `function call at line 7 may store a reference to i`.
 
-A Type I error would also be reported in case `unsafe` stores the value of `x` inside a struct.
+A Type I error would also be reported in case `unsafe` uses the value of `x` inside a composite literal (i.e. `Foo{1, "bar", &y}`).
 
 #### Type II: Function Starts a Goroutine
 ```
