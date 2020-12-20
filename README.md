@@ -1,5 +1,5 @@
 # rangeloop-pointer-findings
-Rangeloop pointer findings in GitHub projects.
+References to range loop variables found on GitHub.
 
 The findings in the issue tracker of this repository were gathered in order to better understand the impact of [this proposed change](https://golang.org/issue/20733).
 
