@@ -1,6 +1,6 @@
 # Deploy Log
 
-When new features are pushed that modify the results being put in this repo, an entry is manually added to this log.
+When new features are pushed that modify the results being stored on the issue tracker of this repo, an entry is manually added to this log.
 
 | First Issue Number | Description | Commit | 
 | - | - | - |
