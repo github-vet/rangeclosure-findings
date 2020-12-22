@@ -129,7 +129,7 @@ To mark a finding, simply add the appropriate emoji reaction to the issue.
 VetBot does a lot of work to try and prove that no reference to a range-loop variable is improperly used. To do so, it checks the broad classes of errors seen below (along with a minimal example).
 
 ### Range Variable used in Defer or Goroutine
-```
+```go
 for _, i := range []int{1,2,3} {
    go func() {
      fmt.Print(i) // prints 3,3,3 (usually)
@@ -139,7 +139,7 @@ for _, i := range []int{1,2,3} {
 Reported as `range-loop variable i used in defer or goroutine at line 3`.
 
 ### Range Variable Reassigned in Loop Body
-```
+```go
 var x *int
 for _, i := range []int{1,2,3} {
    x = &i
@@ -150,7 +150,7 @@ Reported as `reference to i is reassigned at line 3`.
 ### Range Variable Passed as Argument to a Potentially Unsafe Function
 
 #### Type I: Function Writes Pointer to Memory
-```
+```go
 var intPtr *int
 func unsafe(x *int) {
   intPtr = x
@@ -165,7 +165,7 @@ Reported as `function call at line 7 may store a reference to i`.
 A Type I error would also be reported in case `unsafe` uses the value of `x` inside a composite literal (i.e. `Foo{1, "bar", &x}`).
 
 #### Type II: Function Starts a Goroutine
-```
+```go
 func unsafe(x *int) {
   go func() {
     fmt.Println(x)
