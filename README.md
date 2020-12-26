@@ -3,6 +3,10 @@ References to range loop variables found on GitHub.
 
 The findings in the issue tracker of this repository were gathered in order to better understand the impact of [this proposed change](https://golang.org/issue/20733).
 
+## WARNING: Preliminary Findings
+
+The findings in this repository may be inaccurate, as the tool used to produce them remains in beta. There are several known false-negatives which can arise using the current tool, so the absence of a finding must not be construed as safety. For more information, see [this issue tracker](https://github.com/github-vet/bots/issues).
+
 ## Where's the Code?!
 
 This repository is "issue-only". It exists to capture the findings of [a static analysis bot](https://github.com/github-vet/bots), which reads Go repositories found on GitHub and captures potential problems around [range loop variable references](https://github.com/golang/go/wiki/CommonMistakes#using-reference-to-loop-iterator-variable).
