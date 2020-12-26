@@ -9,5 +9,5 @@ When new features are pushed that modify the quality of results stored on the is
 
 * First Issue Number: number of first issue written by the deployed code
 * Description: brief summary of relevant changes
-* Reset: the set of repositories was rescanned, creating duplicates
+* Reset: the set of repositories was rescanned to search for false negatives, creating duplicates
 * Commit: commit ID [in the bots repo](https://github.com/github-vet/bots).
