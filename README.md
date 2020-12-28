@@ -5,7 +5,7 @@ The findings in the issue tracker of this repository were gathered in order to b
 
 ## WARNING: Preliminary Findings
 
-The findings in this repository may be inaccurate, as the tool used to produce them remains under active development. There are several known false-negatives which can arise using the current tool, so the absence of a finding must not be construed as safety. For more information, see [this issue tracker](https://github.com/github-vet/bots/issues).
+The findings in this repository may be inaccurate, and/or contain broken links, as the tool used to produce them remains under active development. There are several known false-negatives which can arise using the current tool, so the absence of a finding must not be construed as safety. For more information, see [this issue tracker](https://github.com/github-vet/bots/issues).
 
 ## Where's the Code?!
 
